@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://2i6lw0cydldu"]
+
+[ext_resource type="Texture2D" uid="uid://d7csm7wmqx6j" path="res://assets/Background.png" id="1_8ps6j"]
+[ext_resource type="Texture2D" uid="uid://cp7w6glumwqba" path="res://assets/Content.png" id="2_floxe"]
+
+[node name="Card" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 126.0
+offset_bottom = 176.0
+size_flags_horizontal = 4
+
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color(0.560784, 0.670588, 0.513726, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8ps6j")
+expand_mode = 3
+
+[node name="ContentBackground" type="TextureRect" parent="."]
+self_modulate = Color(0.843137, 0.729412, 0.607843, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_floxe")
+expand_mode = 3
