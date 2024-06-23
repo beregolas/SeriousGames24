@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dytrj4fttjumf"
-path="res://.godot/imported/Judge1.png-ee1a84ee379685782434ea812ee8aae4.ctex"
+uid="uid://caetswolmetrl"
+path="res://.godot/imported/Zutat_Halloumi.png-c2cd953052f7271f187ceeb6a6b284b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Judge1.png"
-dest_files=["res://.godot/imported/Judge1.png-ee1a84ee379685782434ea812ee8aae4.ctex"]
+source_file="res://assets/zutaten/Zutat_Halloumi.png"
+dest_files=["res://.godot/imported/Zutat_Halloumi.png-c2cd953052f7271f187ceeb6a6b284b3.ctex"]
 
 [params]
 

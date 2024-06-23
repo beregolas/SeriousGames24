@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://binhyvejqq44m"]
 
-[ext_resource type="Texture2D" uid="uid://dytrj4fttjumf" path="res://assets/Judge1.png" id="1_an1rf"]
+[ext_resource type="Texture2D" uid="uid://dytrj4fttjumf" path="res://assets/judges/Judge1.png" id="1_an1rf"]
 
 [node name="Judge" type="Node2D"]
 
@@ -10,6 +10,7 @@ offset_bottom = 117.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Diät" type="Label" parent="JudgeCard"]
+layout_mode = 0
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 285.0
@@ -18,6 +19,7 @@ text = "Diät: mediterrane Ernährungsweise"
 metadata/_edit_use_anchors_ = true
 
 [node name="Like" type="Label" parent="JudgeCard"]
+layout_mode = 0
 offset_left = 10.0
 offset_top = 45.0
 offset_right = 285.0
@@ -26,6 +28,7 @@ text = "Mag besonders: "
 metadata/_edit_use_anchors_ = true
 
 [node name="Dislike" type="Label" parent="JudgeCard"]
+layout_mode = 0
 offset_left = 10.0
 offset_top = 80.0
 offset_right = 285.0
