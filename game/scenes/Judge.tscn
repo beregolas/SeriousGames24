@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://binhyvejqq44m"]
+
+[ext_resource type="Texture2D" uid="uid://dytrj4fttjumf" path="res://assets/Judge1.png" id="1_an1rf"]
+
+[node name="Judge" type="Node2D"]
+
+[node name="JudgeCard" type="Panel" parent="."]
+offset_right = 464.0
+offset_bottom = 117.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Diät" type="Label" parent="JudgeCard"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 285.0
+offset_bottom = 33.0
+text = "Diät: mediterrane Ernährungsweise"
+metadata/_edit_use_anchors_ = true
+
+[node name="Like" type="Label" parent="JudgeCard"]
+offset_left = 10.0
+offset_top = 45.0
+offset_right = 285.0
+offset_bottom = 68.0
+text = "Mag besonders: "
+metadata/_edit_use_anchors_ = true
+
+[node name="Dislike" type="Label" parent="JudgeCard"]
+offset_left = 10.0
+offset_top = 80.0
+offset_right = 285.0
+offset_bottom = 103.0
+text = "Mag nicht: "
+metadata/_edit_use_anchors_ = true
+
+[node name="JudgePosition" type="Label" parent="JudgeCard"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -12.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Judge" type="Sprite2D" parent="JudgeCard/JudgePosition"]
+position = Vector2(-15, 12)
+scale = Vector2(0.11, 0.107)
+texture = ExtResource("1_an1rf")
