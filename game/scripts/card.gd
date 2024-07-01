@@ -1,4 +1,3 @@
-@tool
 extends Control
 
 
@@ -9,6 +8,13 @@ extends Control
 	get:
 		return type
 
+var selected: bool = false
+
+var mouse_over: bool = false
+
+var max_angle: float = 45
+
+var angle_speed: float = 0
 
 enum FoodType {vegetable, fruit, nuts, meat, fish, milk, egg}
 
@@ -22,11 +28,6 @@ const TYPE_DATA: Dictionary = {
 	FoodType.egg: {"Background": Color(0.8666667, 0.8352941, 0.8352941), "Foreground": Color(0.6666667, 0.6666667, 0.60784316), "Name": "egg"}
 }
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
-
-
 func set_data(current_type: FoodType):
 	if $Background != null:
 		# set background color according to type
@@ -35,6 +36,45 @@ func set_data(current_type: FoodType):
 		$TypeLabel.text = "Type: " + TYPE_DATA[current_type].Name
 	pass
 
+func _process(delta: float):
+	if Input.is_action_pressed("mouse_button") and not selected:
+		selected = mouse_over
+	if Input.is_action_just_released("mouse_button"):
+		selected = false
+	if selected:
+		# interpol position to mouse
+		# get mouse position relative to pivot
+		var mouse_position: Vector2 = get_local_mouse_position() - get_pivot_offset()
+		var movement = lerp(Vector2.ZERO, mouse_position, 0.2)
+		movement.x = signf(movement.x) * min(abs(mouse_position.x), max(abs(movement.x), 5. * delta))
+		movement.y = signf(movement.y) *min(abs(mouse_position.y), max(abs(movement.y), 5. * delta))
+		position += movement
+		# add movement.x to the dangle
+		angle_speed += movement.x / 2
+		angle_speed -= rotation_degrees / 10.
+		rotation_degrees += angle_speed * delta
+		if signf(angle_speed) == signf(rotation_degrees):
+			angle_speed *= 0.97
+		rotation_degrees = clamp(rotation_degrees, -max_angle, max_angle)
+		if abs(rotation_degrees) == max_angle:
+			angle_speed = -rotation_degrees / 10
+		if (abs(angle_speed) < 0.05) and (abs(rotation_degrees) < 0.05):
+			angle_speed = 0
+			rotation_degrees = 0
+	else:
+		angle_speed = 0
+		if abs(rotation_degrees) > 0.05:
+			rotation_degrees = lerpf(rotation_degrees, 0., 0.05)
+		else:
+			rotation_degrees = 0
 
-func set_random():
-	type = FoodType.values()[randi_range(0, 6)]
+
+# on mouse over
+func _on_mouse_entered():
+	mouse_over = true
+
+
+func _on_mouse_exited():
+	mouse_over = false
+
+
