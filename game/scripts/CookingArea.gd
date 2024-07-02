@@ -16,3 +16,6 @@ func add_card(card: Card):
 	card.scale = Vector2(0.5, 0.5)
 	$PlayedCards.add_child(card)
 	pass
+
+func _on_button_pressed():
+	print("KOCHEN!")

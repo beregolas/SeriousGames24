@@ -16,6 +16,8 @@ var max_angle: float = 45
 
 var angle_speed: float = 0
 
+var fried: bool = false
+
 enum FoodType {vegetable, fruit, nuts, meat, fish, spice, egg, oil}
 
 const TYPE_DATA: Dictionary = {
@@ -51,6 +53,7 @@ func set_data(data: CardData):
 		$TypeIcon.texture = load("res://assets/types/" + TYPE_DATA[data.type].Name + ".png")
 		$Name.text = data.name
 		$ContentBackground/Image.texture = load("res://assets/zutaten/" + data.name + ".png")
+		$FlavourText.text = str(data.value) + "\n" + ("gebraten" if fried else "")
 
 
 func is_other_card_selected() -> bool:

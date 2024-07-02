@@ -71,9 +71,9 @@ func _process(delta):
 		elif is_mouse_over_other_object(trash):
 			trash.throw_card_away(card)
 		else:
-			remove_child(placeholder)
 			get_parent().get_node("CardHolder").remove_child(card)
-			add_child(card)
+			placeholder.add_sibling(card)
+			remove_child(placeholder)
 			card.selected = false
 
 
