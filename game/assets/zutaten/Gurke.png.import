@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dj8uc38pgbfsd"
-path="res://.godot/imported/Zutat_Mozarella.png-33ebcb33b3c0b56535d5cd7306e759fb.ctex"
+uid="uid://d4jtfjgrmkpoa"
+path="res://.godot/imported/Gurke.png-e9fae6e9133d32c1469179e7bf2ae1ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/zutaten/Zutat_Mozarella.png"
-dest_files=["res://.godot/imported/Zutat_Mozarella.png-33ebcb33b3c0b56535d5cd7306e759fb.ctex"]
+source_file="res://assets/zutaten/Gurke.png"
+dest_files=["res://.godot/imported/Gurke.png-e9fae6e9133d32c1469179e7bf2ae1ab.ctex"]
 
 [params]
 

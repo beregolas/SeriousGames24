@@ -14,4 +14,6 @@ func throw_card_away(card: Card):
 		# else throw away
 	else:
 		card.queue_free()
+	#redraw one card
+	deck.draw_card()
 	pass

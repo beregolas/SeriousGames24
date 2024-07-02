@@ -2,7 +2,7 @@ class_name Hand extends Control
 
 var _child_x_list: Array[float] = []
 
-var double_click_threshhold: float = 300
+var double_click_threshhold: float = 200
 
 var last_click: int = 0
 
@@ -43,7 +43,7 @@ func is_mouse_over_other_object(other: Control) -> bool:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("mouse_button") and ((Time.get_ticks_msec() - last_click) < double_click_threshhold):
-		print("double click")
+		get_tree().call_group("cards", "double_click")
 	elif Input.is_action_just_pressed("mouse_button"):
 		last_click = Time.get_ticks_msec()
 
@@ -96,3 +96,11 @@ func is_full():
 
 func _on_child_order_changed():
 	child_count = get_child_count()
+
+
+func use_oil() -> bool:
+	for card in get_children():
+		if (card.data.type == Card.FoodType.oil):
+			card.queue_free()
+			return true
+	return false

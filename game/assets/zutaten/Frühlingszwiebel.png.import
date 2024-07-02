@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4a07lsk6vrp1"
-path="res://.godot/imported/Zutat_Frühlingszwiebeln.png-8c9c216ec38952ece07d3ff97612372d.ctex"
+path="res://.godot/imported/Frühlingszwiebel.png-ed1ae70b4e47bab189df562117a6bd9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/zutaten/Zutat_Frühlingszwiebeln.png"
-dest_files=["res://.godot/imported/Zutat_Frühlingszwiebeln.png-8c9c216ec38952ece07d3ff97612372d.ctex"]
+source_file="res://assets/zutaten/Frühlingszwiebel.png"
+dest_files=["res://.godot/imported/Frühlingszwiebel.png-ed1ae70b4e47bab189df562117a6bd9b.ctex"]
 
 [params]
 

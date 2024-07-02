@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnawtdj2xqrur"
-path="res://.godot/imported/Zutat_Kartoffelchips.png-d0ccff0c3a10789f7580c76b5dec877c.ctex"
+uid="uid://dj8uc38pgbfsd"
+path="res://.godot/imported/Ei.png-cfe7c1ba4e6222ca1a6be936b64eaf94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/zutaten/Zutat_Kartoffelchips.png"
-dest_files=["res://.godot/imported/Zutat_Kartoffelchips.png-d0ccff0c3a10789f7580c76b5dec877c.ctex"]
+source_file="res://assets/zutaten/Ei.png"
+dest_files=["res://.godot/imported/Ei.png-cfe7c1ba4e6222ca1a6be936b64eaf94.ctex"]
 
 [params]
 

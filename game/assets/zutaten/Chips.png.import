@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caviu5qmctxle"
-path="res://.godot/imported/Zutat_Banane.png-e9fc0cb7087bf74e12200e163665b902.ctex"
+uid="uid://bnawtdj2xqrur"
+path="res://.godot/imported/Chips.png-095e10491fad10d0204567f02a826e88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/zutaten/Zutat_Banane.png"
-dest_files=["res://.godot/imported/Zutat_Banane.png-e9fc0cb7087bf74e12200e163665b902.ctex"]
+source_file="res://assets/zutaten/Chips.png"
+dest_files=["res://.godot/imported/Chips.png-095e10491fad10d0204567f02a826e88.ctex"]
 
 [params]
 

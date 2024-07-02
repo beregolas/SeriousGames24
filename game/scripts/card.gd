@@ -8,7 +8,17 @@ var data: CardData:
 	get:
 		return data
 
-var selected: bool = false
+var selected: bool = false:
+	set(value):
+		if not selected and value:
+			# switch from false to true, record time
+			selection_start = Time.get_ticks_msec()
+			print(selection_start)
+		selected = value
+	get:
+		return selected
+
+var selection_start:int = 0
 
 var mouse_over: bool = false
 
@@ -35,12 +45,21 @@ class CardData:
 	var name: String
 	var type: FoodType
 	var value: int #Wenn Roh verzehrt
+	var fried
 
-	func _init(n: String, t: FoodType, v: int):
+	func _init(n: String, t: FoodType, v: int, f):
 		self.name = n
 		self.type = t
 		self.value = v
+		self.fried = f
 
+func double_click():
+	if mouse_over:
+		# try frying this card
+		if data.fried != null:
+			if find_parent("Game").get_node("Hand").use_oil():
+				fried = true
+				set_data(data)
 
 
 
@@ -53,7 +72,7 @@ func set_data(data: CardData):
 		$TypeIcon.texture = load("res://assets/types/" + TYPE_DATA[data.type].Name + ".png")
 		$Name.text = data.name
 		$ContentBackground/Image.texture = load("res://assets/zutaten/" + data.name + ".png")
-		$FlavourText.text = str(data.value) + "\n" + ("gebraten" if fried else "")
+		$FlavourText.text = str(data.fried if fried else data.value) + "\n" + ("gebraten" if fried else "")
 
 
 func is_other_card_selected() -> bool:
@@ -68,10 +87,10 @@ func _process(delta: float):
 		selected = mouse_over
 	if not Input.is_action_pressed("mouse_button"):
 		selected = false
-	if selected:
+	if selected and ((Time.get_ticks_msec() - selection_start) > 210):
 		# move from hand to card_holder
 		var parent: Node = get_parent()
-		if parent.name != "CardHolder":
+		if (parent.name != "CardHolder"):
 			var card_holder = get_tree().get_root().get_node("Game/CardHolder")
 			if card_holder.get_child_count() == 0:
 				parent.remove_child(self)
@@ -112,4 +131,5 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	mouse_over = false
 
-
+func get_value() -> int:
+	return data.fried if fried else data.value

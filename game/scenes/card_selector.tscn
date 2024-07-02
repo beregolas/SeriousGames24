@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://de6kbcw3cnlki"]
+
+[ext_resource type="Script" path="res://scripts/card_selector.gd" id="1_i2xx3"]
+
+[node name="CardSelector" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1026.0
+offset_bottom = -460.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i2xx3")
+
+[node name="Button" type="CheckButton" parent="."]
+layout_mode = 2
+text = "zum Deck:"
+icon_alignment = 1

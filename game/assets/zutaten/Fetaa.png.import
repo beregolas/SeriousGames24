@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rp7wb2y6fbod"
-path="res://.godot/imported/Zutat_Kartotten.png-5194a7df49b66f270c82f822c5e70e5b.ctex"
+uid="uid://yslhjhfpo4vu"
+path="res://.godot/imported/Fetaa.png-39734f859aeca2edbc0062b225dd9020.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/zutaten/Zutat_Kartotten.png"
-dest_files=["res://.godot/imported/Zutat_Kartotten.png-5194a7df49b66f270c82f822c5e70e5b.ctex"]
+source_file="res://assets/zutaten/Fetaa.png"
+dest_files=["res://.godot/imported/Fetaa.png-39734f859aeca2edbc0062b225dd9020.ctex"]
 
 [params]
 

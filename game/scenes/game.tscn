@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c045mmxi1aecc"]
+[gd_scene load_steps=14 format=3 uid="uid://c045mmxi1aecc"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_vssws"]
 [ext_resource type="Texture2D" uid="uid://bpagkxgcjtlsv" path="res://assets/Hintergrund.png" id="2_43m3l"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" path="res://scripts/hand.gd" id="4_41m42"]
 [ext_resource type="Texture2D" uid="uid://deuwcp5re3vsd" path="res://assets/judges/4.png" id="7_o72ut"]
 [ext_resource type="Script" path="res://scripts/Trashcan.gd" id="7_wnnl1"]
+[ext_resource type="Script" path="res://scripts/NewRoundOverlay.gd" id="12_d4gus"]
+[ext_resource type="PackedScene" uid="uid://de6kbcw3cnlki" path="res://scenes/card_selector.tscn" id="12_vax63"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -246,7 +248,7 @@ text = "Spielername"
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "[b]RUNDEN:[/b]"
+text = "[b]RUNDE:[/b]"
 fit_content = true
 
 [node name="Runden" type="Label" parent="Spielerdaten"]
@@ -279,5 +281,93 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="NewRoundOverlay" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_d4gus")
+
+[node name="Background" type="ColorRect" parent="NewRoundOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0193283, 0.019323, 0.0418257, 0.905882)
+
+[node name="Container" type="VBoxContainer" parent="NewRoundOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="NewRoundOverlay/Container"]
+layout_mode = 2
+text = "HERZLICHEN GLÜCKWUNSCH! 
+RUNDE ERREICHT!
+
+NEUE KARTEN ZUR AUSWAHL:"
+horizontal_alignment = 1
+
+[node name="CardContainer" type="HBoxContainer" parent="NewRoundOverlay/Container"]
+layout_mode = 2
+
+[node name="CardSelector" parent="NewRoundOverlay/Container/CardContainer" instance=ExtResource("12_vax63")]
+layout_mode = 2
+
+[node name="CardSelector2" parent="NewRoundOverlay/Container/CardContainer" instance=ExtResource("12_vax63")]
+layout_mode = 2
+
+[node name="CardSelector3" parent="NewRoundOverlay/Container/CardContainer" instance=ExtResource("12_vax63")]
+layout_mode = 2
+
+[node name="CardSelector4" parent="NewRoundOverlay/Container/CardContainer" instance=ExtResource("12_vax63")]
+layout_mode = 2
+
+[node name="CardSelector5" parent="NewRoundOverlay/Container/CardContainer" instance=ExtResource("12_vax63")]
+layout_mode = 2
+
+[node name="CardSelector6" parent="NewRoundOverlay/Container/CardContainer" instance=ExtResource("12_vax63")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="NewRoundOverlay/Container"]
+layout_mode = 2
+text = "
+HIER KLICKEN UM DIE NÄCHSTE RUNDE ZU BEGINNEN!
+
+"
+
+[node name="MainMenu" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.316838, 0.317392, 0.453014, 1)
+
 [connection signal="pressed" from="CookingArea/Button" to="CookingArea" method="_on_button_pressed"]
 [connection signal="child_order_changed" from="Hand" to="Hand" method="_on_child_order_changed"]
+[connection signal="pressed" from="NewRoundOverlay/Container/Button" to="NewRoundOverlay" method="remove_overlay"]
