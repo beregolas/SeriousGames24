@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mc7oyk04p4s8"
-path="res://.godot/imported/meat.png-a19dd753ed210e7c0a3cddaec40c27ed.ctex"
+uid="uid://deuwcp5re3vsd"
+path="res://.godot/imported/4.png-01d4265541ed68cc15c7f73bad85f270.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/types/meat.png"
-dest_files=["res://.godot/imported/meat.png-a19dd753ed210e7c0a3cddaec40c27ed.ctex"]
+source_file="res://assets/judges/4.png"
+dest_files=["res://.godot/imported/4.png-01d4265541ed68cc15c7f73bad85f270.ctex"]
 
 [params]
 

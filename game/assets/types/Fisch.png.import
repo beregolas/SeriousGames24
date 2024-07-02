@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbkdkv1p4womd"
-path="res://.godot/imported/spice.png-dfef6728590a335dc66558225c1622f5.ctex"
+uid="uid://xtnbfv30v4wm"
+path="res://.godot/imported/Fisch.png-21543dd850629ae373a549ab89c804ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/types/spice.png"
-dest_files=["res://.godot/imported/spice.png-dfef6728590a335dc66558225c1622f5.ctex"]
+source_file="res://assets/types/Fisch.png"
+dest_files=["res://.godot/imported/Fisch.png-21543dd850629ae373a549ab89c804ca.ctex"]
 
 [params]
 

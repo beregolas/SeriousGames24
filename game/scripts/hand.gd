@@ -6,6 +6,8 @@ var double_click_threshhold: float = 300
 
 var last_click: int = 0
 
+var max_hand_size: int = 7
+
 var child_count: int     = 0:
 	set(value):
 		child_count = value
@@ -19,8 +21,8 @@ var child_count: int     = 0:
 
 var placeholder: Control = Control.new()
 
-@export var trash: Control
-@export var judge: Control
+@export var trash: Trashcan
+@export var judge: Judge
 @export var cooking_area: CookingArea
 
 func get_held_card() -> Node:
@@ -65,9 +67,9 @@ func _process(delta):
 			get_parent().get_node("CardHolder").remove_child(card)
 			cooking_area.add_card(card)
 		elif is_mouse_over_other_object(judge):
-			print("gave to judge")
+			judge.give_card(card)
 		elif is_mouse_over_other_object(trash):
-			print("put in trash")
+			trash.throw_card_away(card)
 		else:
 			remove_child(placeholder)
 			get_parent().get_node("CardHolder").remove_child(card)
@@ -90,7 +92,7 @@ func move_placeholder(mouse_x: float):
 
 func is_full():
 	# Max 7 Handkarten
-	return get_child_count() >= 7
+	return get_child_count() >= max_hand_size
 
 func _on_child_order_changed():
 	child_count = get_child_count()

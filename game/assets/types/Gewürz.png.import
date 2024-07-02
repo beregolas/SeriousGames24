@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1ysysrwmh2d7"
-path="res://.godot/imported/fruit.png-ea8599e0277ff23ef8f9e492121b40a7.ctex"
+uid="uid://cbkdkv1p4womd"
+path="res://.godot/imported/Gewürz.png-5e2735729f1632e3b099dec1888b7918.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/types/fruit.png"
-dest_files=["res://.godot/imported/fruit.png-ea8599e0277ff23ef8f9e492121b40a7.ctex"]
+source_file="res://assets/types/Gewürz.png"
+dest_files=["res://.godot/imported/Gewürz.png-5e2735729f1632e3b099dec1888b7918.ctex"]
 
 [params]
 

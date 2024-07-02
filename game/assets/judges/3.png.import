@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xrn5fg5m0uqf"
-path="res://.godot/imported/nuts.png-53f0fb607a1c502d07c1662d33e2db26.ctex"
+uid="uid://x6jspr80b4mf"
+path="res://.godot/imported/3.png-6103bce39852146245d65ede2285b2b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/types/nuts.png"
-dest_files=["res://.godot/imported/nuts.png-53f0fb607a1c502d07c1662d33e2db26.ctex"]
+source_file="res://assets/judges/3.png"
+dest_files=["res://.godot/imported/3.png-6103bce39852146245d65ede2285b2b3.ctex"]
 
 [params]
 

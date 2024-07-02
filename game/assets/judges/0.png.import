@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dytrj4fttjumf"
-path="res://.godot/imported/Judge1.png-76a6d0a2b36aa1b3fc3669faf81fdb6b.ctex"
+uid="uid://ddqh2nme0apgp"
+path="res://.godot/imported/0.png-f5f5d01fde954679e83077c28e08aa5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/judges/Judge1.png"
-dest_files=["res://.godot/imported/Judge1.png-76a6d0a2b36aa1b3fc3669faf81fdb6b.ctex"]
+source_file="res://assets/judges/0.png"
+dest_files=["res://.godot/imported/0.png-f5f5d01fde954679e83077c28e08aa5f.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deuwcp5re3vsd"
-path="res://.godot/imported/Judge4.png-880f99b3e34fbafff0f3551a0ef41416.ctex"
+uid="uid://d1ysysrwmh2d7"
+path="res://.godot/imported/Frucht.png-b3cdfb2e671ac6d2671098fe7477bbda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/judges/Judge4.png"
-dest_files=["res://.godot/imported/Judge4.png-880f99b3e34fbafff0f3551a0ef41416.ctex"]
+source_file="res://assets/types/Frucht.png"
+dest_files=["res://.godot/imported/Frucht.png-b3cdfb2e671ac6d2671098fe7477bbda.ctex"]
 
 [params]
 

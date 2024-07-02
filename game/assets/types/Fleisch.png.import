@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b16j6qv0lus83"
-path="res://.godot/imported/vegetable.png-3abc5e7f4d5c82db71f0c656c6ce85ff.ctex"
+uid="uid://mc7oyk04p4s8"
+path="res://.godot/imported/Fleisch.png-fce95c229bba1db969decb6de37cb8e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/types/vegetable.png"
-dest_files=["res://.godot/imported/vegetable.png-3abc5e7f4d5c82db71f0c656c6ce85ff.ctex"]
+source_file="res://assets/types/Fleisch.png"
+dest_files=["res://.godot/imported/Fleisch.png-fce95c229bba1db969decb6de37cb8e4.ctex"]
 
 [params]
 

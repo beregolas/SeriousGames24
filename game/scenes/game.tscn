@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://c045mmxi1aecc"]
+[gd_scene load_steps=11 format=3 uid="uid://c045mmxi1aecc"]
 
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_vssws"]
 [ext_resource type="Texture2D" uid="uid://t4w78ivba8qs" path="res://assets/Mülleimer.png" id="2_bh08h"]
 [ext_resource type="Texture2D" uid="uid://c21xqjhtcib5t" path="res://assets/card_background.png" id="2_c7r6j"]
 [ext_resource type="Texture2D" uid="uid://danrt06ni7gib" path="res://assets/Kochtopf.png" id="2_l3snv"]
@@ -7,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://curr4rurl6xd8" path="res://scenes/judge.tscn" id="3_qad51"]
 [ext_resource type="Script" path="res://scripts/deck.gd" id="3_xytm2"]
 [ext_resource type="Script" path="res://scripts/hand.gd" id="4_41m42"]
-[ext_resource type="Texture2D" uid="uid://deuwcp5re3vsd" path="res://assets/judges/Judge4.png" id="7_o72ut"]
+[ext_resource type="Texture2D" uid="uid://deuwcp5re3vsd" path="res://assets/judges/4.png" id="7_o72ut"]
+[ext_resource type="Script" path="res://scripts/Trashcan.gd" id="7_wnnl1"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -16,6 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vssws")
 
 [node name="CookingArea" type="TextureRect" parent="."]
 layout_mode = 1
@@ -106,11 +109,13 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("2_bh08h")
 expand_mode = 1
+script = ExtResource("7_wnnl1")
 
-[node name="Judge" parent="." instance=ExtResource("3_qad51")]
+[node name="Judge" parent="." node_paths=PackedStringArray("game") instance=ExtResource("3_qad51")]
 layout_mode = 1
 offset_right = 480.0
 offset_bottom = 300.0
+game = NodePath("..")
 
 [node name="Image" type="TextureRect" parent="Judge"]
 layout_mode = 0
@@ -154,7 +159,7 @@ text = "Essensart"
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "[b]SCHLECHT:[/b]"
+text = "[b]HASST:[/b]"
 fit_content = true
 
 [node name="Negativ" type="Label" parent="Judge/Text"]
