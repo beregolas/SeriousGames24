@@ -1,5 +1,4 @@
-extends Control
-
+class_name Card extends Control
 
 @export var type: FoodType:
 	set(value):
@@ -36,12 +35,28 @@ func set_data(current_type: FoodType):
 		$TypeLabel.text = "Type: " + TYPE_DATA[current_type].Name
 	pass
 
+
+func is_other_card_selected() -> bool:
+	for card in get_tree().get_nodes_in_group("cards"):
+		if card.selected:
+			return true
+	return false
+
+
 func _process(delta: float):
-	if Input.is_action_pressed("mouse_button") and not selected:
+	if Input.is_action_pressed("mouse_button") and not selected and not is_other_card_selected():
 		selected = mouse_over
-	if Input.is_action_just_released("mouse_button"):
+	if not Input.is_action_pressed("mouse_button"):
 		selected = false
 	if selected:
+		# move from hand to card_holder
+		var parent: Node = get_parent()
+		if parent.name != "CardHolder":
+			var card_holder = get_tree().get_root().get_node("Game/CardHolder")
+			if card_holder.get_child_count() == 0:
+				parent.remove_child(self)
+				card_holder.add_child(self)
+				position = get_parent().get_local_mouse_position()
 		# interpol position to mouse
 		# get mouse position relative to pivot
 		var mouse_position: Vector2 = get_local_mouse_position() - get_pivot_offset()
