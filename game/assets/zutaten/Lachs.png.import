@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf6s4g40njy83"
-path="res://.godot/imported/Zutat_Thunfisch.png-64e2917f1b261bde7231a44888bd7603.ctex"
+uid="uid://ba0f1ev66fy6k"
+path="res://.godot/imported/Lachs.png-e17a0ae208c3fd38365babfaad84dd59.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/zutaten/Zutat_Thunfisch.png"
-dest_files=["res://.godot/imported/Zutat_Thunfisch.png-64e2917f1b261bde7231a44888bd7603.ctex"]
+source_file="res://assets/zutaten/Lachs.png"
+dest_files=["res://.godot/imported/Lachs.png-e17a0ae208c3fd38365babfaad84dd59.ctex"]
 
 [params]
 

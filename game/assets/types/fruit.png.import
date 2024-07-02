@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuuedyl4ks5im"
-path="res://.godot/imported/Zutat_Hähnchenbrust.png-e07e51b74f631d157ff528f046ef63c9.ctex"
+uid="uid://d1ysysrwmh2d7"
+path="res://.godot/imported/fruit.png-ea8599e0277ff23ef8f9e492121b40a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/zutaten/Zutat_Hähnchenbrust.png"
-dest_files=["res://.godot/imported/Zutat_Hähnchenbrust.png-e07e51b74f631d157ff528f046ef63c9.ctex"]
+source_file="res://assets/types/fruit.png"
+dest_files=["res://.godot/imported/fruit.png-ea8599e0277ff23ef8f9e492121b40a7.ctex"]
 
 [params]
 

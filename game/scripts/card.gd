@@ -1,11 +1,12 @@
 class_name Card extends Control
 
-@export var type: FoodType:
+
+var data: CardData:
 	set(value):
-		type = value
-		set_data(type)
+		data = value
+		set_data(data)
 	get:
-		return type
+		return data
 
 var selected: bool = false
 
@@ -15,7 +16,7 @@ var max_angle: float = 45
 
 var angle_speed: float = 0
 
-enum FoodType {vegetable, fruit, nuts, meat, fish, milk, egg}
+enum FoodType {vegetable, fruit, nuts, meat, fish, spice, egg, oil}
 
 const TYPE_DATA: Dictionary = {
 	FoodType.vegetable: {"Background": Color(0.29803923, 0.52156866, 0.15294118), "Foreground": Color(0.6666667, 0.6666667, 0.60784316), "Name": "vegetable"},
@@ -23,17 +24,34 @@ const TYPE_DATA: Dictionary = {
 	FoodType.nuts: {"Background": Color(0.53333336, 0.33333334, 0.06666667), "Foreground": Color(0.53333336, 0.44313726, 0.37254903), "Name": "nuts"},
 	FoodType.meat: {"Background": Color(0.91764706, 0.23529412, 0.12156863), "Foreground": Color(0.72156864, 0.5411765, 0.5294118), "Name": "meat"},
 	FoodType.fish: {"Background": Color(0.0627451, 0.5058824, 0.7921569), "Foreground": Color(0.4392157, 0.5058824, 0.5803922), "Name": "fish"},
-	FoodType.milk: {"Background": Color(0.8666667, 0.8352941, 0.8352941), "Foreground": Color(0.6666667, 0.6666667, 0.60784316), "Name": "milk"},
-	FoodType.egg: {"Background": Color(0.8666667, 0.8352941, 0.8352941), "Foreground": Color(0.6666667, 0.6666667, 0.60784316), "Name": "egg"}
+	FoodType.spice: {"Background": Color(0.011764706, 0.627451, 0.24705882), "Foreground": Color(0.38039216, 0.627451, 0.3764706), "Name": "milk"},
+	FoodType.egg: {"Background": Color(0.8666667, 0.8352941, 0.8352941), "Foreground": Color(0.6666667, 0.6666667, 0.60784316), "Name": "egg"},
+	FoodType.oil: {"Background": Color(0.38039216, 0.627451, 0.3764706), "Foreground": Color(0.6666667, 0.6666667, 0.60784316), "Name": "oil"}
 }
 
-func set_data(current_type: FoodType):
+class CardData:
+	var name: String
+	var type: FoodType
+	var value: int #Wenn Roh verzehrt
+
+	func _init(n: String, t: FoodType, v: int):
+		self.name = n
+		self.type = t
+		self.value = v
+
+
+
+
+func set_data(data: CardData):
 	if $Background != null:
 		# set background color according to type
-		$Background.self_modulate = TYPE_DATA[current_type].Background
-		$ContentBackground.self_modulate = TYPE_DATA[current_type].Foreground
-		$TypeLabel.text = "Type: " + TYPE_DATA[current_type].Name
-	pass
+		$Background.self_modulate = TYPE_DATA[data.type].Background
+		$ContentBackground.self_modulate = TYPE_DATA[data.type].Foreground
+		$TypeLabel.text = TYPE_DATA[data.type].Name
+		$TypeIcon.texture = load("res://assets/types/" + TYPE_DATA[data.type].Name + ".png")
+		$Name.text = data.name
+		print(data.name)
+		$ContentBackground/Image.texture = load("res://assets/zutaten/" + data.name + ".png")
 
 
 func is_other_card_selected() -> bool:

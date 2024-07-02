@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yslhjhfpo4vu"
-path="res://.godot/imported/Zutat_Feta.png-933e24b8a43241d9d68457685fb54b59.ctex"
+uid="uid://k4r1cgb7h22c"
+path="res://.godot/imported/Zwiebel.png-2e8d28f6e96fa2567116cab74c482b87.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/zutaten/Zutat_Feta.png"
-dest_files=["res://.godot/imported/Zutat_Feta.png-933e24b8a43241d9d68457685fb54b59.ctex"]
+source_file="res://assets/zutaten/Zwiebel.png"
+dest_files=["res://.godot/imported/Zwiebel.png-2e8d28f6e96fa2567116cab74c482b87.ctex"]
 
 [params]
 

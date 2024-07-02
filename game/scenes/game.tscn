@@ -1,6 +1,5 @@
 [gd_scene load_steps=9 format=3 uid="uid://c045mmxi1aecc"]
 
-[ext_resource type="PackedScene" uid="uid://2i6lw0cydldu" path="res://scenes/card.tscn" id="1_o4rqe"]
 [ext_resource type="Texture2D" uid="uid://t4w78ivba8qs" path="res://assets/Mülleimer.png" id="2_bh08h"]
 [ext_resource type="Texture2D" uid="uid://c21xqjhtcib5t" path="res://assets/card_background.png" id="2_c7r6j"]
 [ext_resource type="Texture2D" uid="uid://danrt06ni7gib" path="res://assets/Kochtopf.png" id="2_l3snv"]
@@ -8,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://curr4rurl6xd8" path="res://scenes/judge.tscn" id="3_qad51"]
 [ext_resource type="Script" path="res://scripts/deck.gd" id="3_xytm2"]
 [ext_resource type="Script" path="res://scripts/hand.gd" id="4_41m42"]
+[ext_resource type="Texture2D" uid="uid://deuwcp5re3vsd" path="res://assets/judges/Judge4.png" id="7_o72ut"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -19,15 +19,50 @@ grow_vertical = 2
 
 [node name="CookingArea" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -191.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -95.5
+offset_right = 95.5
 offset_bottom = 219.0
-grow_horizontal = 0
+grow_horizontal = 2
 texture = ExtResource("2_l3snv")
 expand_mode = 1
 script = ExtResource("2_xsreb")
+
+[node name="Button" type="Button" parent="CookingArea"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -94.5
+offset_top = -219.0
+offset_right = 95.5
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "
+
+
+
+
+Kochen!"
+
+[node name="PlayedCards" type="GridContainer" parent="CookingArea"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 3.513
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 233.017
+offset_bottom = 227.0
+grow_horizontal = 0
+columns = 4
 
 [node name="Deck" type="TextureRect" parent="."]
 layout_mode = 1
@@ -64,9 +99,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -191.0
-offset_top = -109.5
-offset_bottom = 109.5
+offset_left = -103.0
+offset_top = -21.0
+offset_bottom = 97.0
 grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("2_bh08h")
@@ -74,8 +109,133 @@ expand_mode = 1
 
 [node name="Judge" parent="." instance=ExtResource("3_qad51")]
 layout_mode = 1
-offset_right = 300.0
+offset_right = 480.0
 offset_bottom = 300.0
+
+[node name="Image" type="TextureRect" parent="Judge"]
+layout_mode = 0
+offset_right = 194.0
+offset_bottom = 225.0
+texture = ExtResource("7_o72ut")
+expand_mode = 2
+
+[node name="Text" type="GridContainer" parent="Judge"]
+layout_mode = 0
+offset_left = 225.0
+offset_right = 473.0
+offset_bottom = 277.0
+columns = 2
+
+[node name="NameLabel" type="RichTextLabel" parent="Judge/Text"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[b]NAME:[/b]"
+fit_content = true
+
+[node name="Name" type="Label" parent="Judge/Text"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Judge Name"
+
+[node name="PositivLabel" type="RichTextLabel" parent="Judge/Text"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[b]BEVORZUGT:[/b]"
+fit_content = true
+
+[node name="Positiv" type="Label" parent="Judge/Text"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Essensart"
+
+[node name="NegativLabel" type="RichTextLabel" parent="Judge/Text"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[b]SCHLECHT:[/b]"
+fit_content = true
+
+[node name="Negativ" type="Label" parent="Judge/Text"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Gericht"
+
+[node name="Placeholder" type="Label" parent="Judge/Text"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Placeholder2" type="Label" parent="Judge/Text"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ZeitlimitLabel" type="RichTextLabel" parent="Judge/Text"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[b]ZEITLIMIT:[/b]"
+fit_content = true
+
+[node name="Zeitlimit" type="Label" parent="Judge/Text"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "X Karten"
+
+[node name="PunkteLabel" type="RichTextLabel" parent="Judge/Text"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[b]PUNKTE:[/b]"
+fit_content = true
+
+[node name="Punkte" type="Label" parent="Judge/Text"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0 / 12"
+
+[node name="Spielerdaten" type="GridContainer" parent="."]
+layout_mode = 0
+offset_top = 298.0
+offset_right = 248.0
+offset_bottom = 530.0
+columns = 2
+
+[node name="NameLabel" type="RichTextLabel" parent="Spielerdaten"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[b]NAME:[/b]"
+fit_content = true
+
+[node name="Name" type="Label" parent="Spielerdaten"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Spielername"
+
+[node name="PunkteLabel" type="RichTextLabel" parent="Spielerdaten"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[b]PUNKTE:[/b]"
+fit_content = true
+
+[node name="Punkte" type="Label" parent="Spielerdaten"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Spielername"
+
+[node name="RundenLabel" type="RichTextLabel" parent="Spielerdaten"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[b]RUNDEN:[/b]"
+fit_content = true
+
+[node name="Runden" type="Label" parent="Spielerdaten"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Spielername"
 
 [node name="Hand" type="HBoxContainer" parent="." node_paths=PackedStringArray("trash", "judge", "cooking_area")]
 layout_mode = 1
@@ -93,15 +253,6 @@ trash = NodePath("../Trashcan")
 judge = NodePath("../Judge")
 cooking_area = NodePath("../CookingArea")
 
-[node name="Card2" parent="Hand" instance=ExtResource("1_o4rqe")]
-layout_mode = 2
-
-[node name="Card3" parent="Hand" instance=ExtResource("1_o4rqe")]
-layout_mode = 2
-
-[node name="Card4" parent="Hand" instance=ExtResource("1_o4rqe")]
-layout_mode = 2
-
 [node name="CardHolder" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -110,17 +261,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -174.5
-offset_right = 174.5
-offset_bottom = 123.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 32
-text = "Kochen!"
 
 [connection signal="child_order_changed" from="Hand" to="Hand" method="_on_child_order_changed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df0ieswml7ua2"
-path="res://.godot/imported/Zutat_Weiße_Bohnen.png-16b3488c539ac0054c856a63978759f7.ctex"
+uid="uid://b3dclmqovnk5"
+path="res://.godot/imported/egg.png-77307937530dd4a3ab1f602db901e9c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/zutaten/Zutat_Weiße_Bohnen.png"
-dest_files=["res://.godot/imported/Zutat_Weiße_Bohnen.png-16b3488c539ac0054c856a63978759f7.ctex"]
+source_file="res://assets/types/egg.png"
+dest_files=["res://.godot/imported/egg.png-77307937530dd4a3ab1f602db901e9c2.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-extends Control
+class_name Hand extends Control
 
 var _child_x_list: Array[float] = []
 
@@ -6,7 +6,7 @@ var double_click_threshhold: float = 300
 
 var last_click: int = 0
 
-var child_count: int = 0:
+var child_count: int     = 0:
 	set(value):
 		child_count = value
 		_child_x_list.resize(child_count)
@@ -17,11 +17,11 @@ var child_count: int = 0:
 	get:
 		return child_count
 
-var placeholder = Control.new()
+var placeholder: Control = Control.new()
 
 @export var trash: Control
 @export var judge: Control
-@export var cooking_area: Control
+@export var cooking_area: CookingArea
 
 func get_held_card() -> Node:
 	var card_holder: Node = get_parent().get_node("CardHolder")
@@ -62,6 +62,8 @@ func _process(delta):
 		# check for drop
 		if is_mouse_over_other_object(cooking_area):
 			print("dropped in pot")
+			get_parent().get_node("CardHolder").remove_child(card)
+			cooking_area.add_card(card)
 		elif is_mouse_over_other_object(judge):
 			print("gave to judge")
 		elif is_mouse_over_other_object(trash):
@@ -86,7 +88,9 @@ func move_placeholder(mouse_x: float):
 				idx = i
 		move_child(placeholder, idx)
 
-
+func is_full():
+	# Max 7 Handkarten
+	return get_child_count() >= 7
 
 func _on_child_order_changed():
 	child_count = get_child_count()

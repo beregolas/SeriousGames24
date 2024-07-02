@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kcwc5csb8wbp"
-path="res://.godot/imported/Zutat_Knoblauch.png-b560e55c87ca7cbd0cb8c003bc30352f.ctex"
+uid="uid://d4jtfjgrmkpoa"
+path="res://.godot/imported/Karotte.png-709e97de2ffc7238c4ab5539d744fc56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/zutaten/Zutat_Knoblauch.png"
-dest_files=["res://.godot/imported/Zutat_Knoblauch.png-b560e55c87ca7cbd0cb8c003bc30352f.ctex"]
+source_file="res://assets/zutaten/Karotte.png"
+dest_files=["res://.godot/imported/Karotte.png-709e97de2ffc7238c4ab5539d744fc56.ctex"]
 
 [params]
 

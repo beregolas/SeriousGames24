@@ -1,4 +1,4 @@
-extends TextureRect
+class_name CookingArea extends TextureRect
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,3 +12,7 @@ func _process(delta):
 	pass
 
 
+func add_card(card: Card):
+	card.scale = Vector2(0.5, 0.5)
+	$PlayedCards.add_child(card)
+	pass

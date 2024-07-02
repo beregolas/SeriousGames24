@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr8cvd10qs6uv"
-path="res://.godot/imported/Zutat_Rosmarin.png-26de97aee464a37f26488750a35cc95a.ctex"
+uid="uid://dgfgvr3n4svlg"
+path="res://.godot/imported/Zitrone.png-d461a5e82108de19169d811c5c090896.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/zutaten/Zutat_Rosmarin.png"
-dest_files=["res://.godot/imported/Zutat_Rosmarin.png-26de97aee464a37f26488750a35cc95a.ctex"]
+source_file="res://assets/zutaten/Zitrone.png"
+dest_files=["res://.godot/imported/Zitrone.png-d461a5e82108de19169d811c5c090896.ctex"]
 
 [params]
 

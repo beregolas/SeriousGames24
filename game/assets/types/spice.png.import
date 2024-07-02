@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m8t2bwtvaeap"
-path="res://.godot/imported/Zutat_Mandeln.png-c847cb535c078b7d75d9b46ab4d1606f.ctex"
+uid="uid://cbkdkv1p4womd"
+path="res://.godot/imported/spice.png-dfef6728590a335dc66558225c1622f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/zutaten/Zutat_Mandeln.png"
-dest_files=["res://.godot/imported/Zutat_Mandeln.png-c847cb535c078b7d75d9b46ab4d1606f.ctex"]
+source_file="res://assets/types/spice.png"
+dest_files=["res://.godot/imported/spice.png-dfef6728590a335dc66558225c1622f5.ctex"]
 
 [params]
 

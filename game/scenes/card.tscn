@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dabsf2bqol0em" path="res://assets/Background.png" id="1_8ps6j"]
 [ext_resource type="Theme" uid="uid://dkvt71lyrhdrc" path="res://card_theme.tres" id="1_mbnq0"]
 [ext_resource type="Texture2D" uid="uid://sh7tk35ctwv7" path="res://assets/Content.png" id="2_floxe"]
-[ext_resource type="Texture2D" uid="uid://b7hug8e6xc0vt" path="res://assets/12_Grapefruit.png" id="5_68nl8"]
 [ext_resource type="Texture2D" uid="uid://twc25jmgh5yk" path="res://assets/Banane_mit_Schale.jpg" id="5_cwug0"]
+[ext_resource type="Texture2D" uid="uid://xtnbfv30v4wm" path="res://assets/types/fish.png" id="6_lpapj"]
 
 [node name="Card" type="Control" groups=["cards"]]
 custom_minimum_size = Vector2(126, 176)
@@ -19,7 +19,6 @@ pivot_offset = Vector2(63, 44)
 size_flags_horizontal = 4
 theme = ExtResource("1_mbnq0")
 script = ExtResource("1_2qlwn")
-type = 5
 
 [node name="Background" type="TextureRect" parent="."]
 self_modulate = Color(0.698039, 0.443137, 0.152941, 1)
@@ -83,18 +82,18 @@ offset_right = 25.0
 offset_bottom = 39.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 12
-text = "Type: "
+text = "Frucht"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TypeIcon" type="TextureRect" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_left = 15.0
-offset_top = 31.0
-offset_right = 47.0
+offset_left = 16.0
+offset_top = 35.0
+offset_right = 44.0
 offset_bottom = 63.0
-texture = ExtResource("5_68nl8")
+texture = ExtResource("6_lpapj")
 
 [node name="FlavourText" type="Label" parent="."]
 layout_mode = 0
@@ -103,9 +102,6 @@ offset_top = 121.0
 offset_right = 113.0
 offset_bottom = 168.0
 theme_override_font_sizes/font_size = 10
-text = "This is the card
-explainer textn
-number 2"
 horizontal_alignment = 1
 clip_text = true
 

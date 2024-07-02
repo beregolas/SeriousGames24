@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4jtfjgrmkpoa"
-path="res://.godot/imported/Zutat_Gurke.png-3f2e1f19a9f41b9453d26ad5c0a4cd6e.ctex"
+uid="uid://xrn5fg5m0uqf"
+path="res://.godot/imported/nuts.png-53f0fb607a1c502d07c1662d33e2db26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/zutaten/Zutat_Gurke.png"
-dest_files=["res://.godot/imported/Zutat_Gurke.png-3f2e1f19a9f41b9453d26ad5c0a4cd6e.ctex"]
+source_file="res://assets/types/nuts.png"
+dest_files=["res://.godot/imported/nuts.png-53f0fb607a1c502d07c1662d33e2db26.ctex"]
 
 [params]
 
