@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c045mmxi1aecc"]
+[gd_scene load_steps=19 format=3 uid="uid://c045mmxi1aecc"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_vssws"]
 [ext_resource type="Texture2D" uid="uid://bpagkxgcjtlsv" path="res://assets/Hintergrund.png" id="2_43m3l"]
@@ -13,6 +13,11 @@
 [ext_resource type="Script" path="res://scripts/Trashcan.gd" id="7_wnnl1"]
 [ext_resource type="Script" path="res://scripts/NewRoundOverlay.gd" id="12_d4gus"]
 [ext_resource type="PackedScene" uid="uid://de6kbcw3cnlki" path="res://scenes/card_selector.tscn" id="12_vax63"]
+[ext_resource type="Script" path="res://scripts/Kochbuch.gd" id="13_pknj2"]
+[ext_resource type="AudioStream" uid="uid://blxqu6ce64u5g" path="res://assets/Space Jazz.mp3" id="14_n5mqp"]
+[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="14_u1slc"]
+[ext_resource type="Script" path="res://scripts/music.gd" id="15_wyd14"]
+[ext_resource type="Texture2D" uid="uid://5le1kss8kakj" path="res://assets/Kochbuch.png" id="17_vx24v"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -141,7 +146,7 @@ expand_mode = 2
 [node name="Text" type="GridContainer" parent="Judge"]
 layout_mode = 0
 offset_left = 225.0
-offset_right = 473.0
+offset_right = 509.0
 offset_bottom = 277.0
 columns = 2
 
@@ -221,6 +226,7 @@ offset_bottom = 530.0
 columns = 2
 
 [node name="NameLabel" type="RichTextLabel" parent="Spielerdaten"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
@@ -228,6 +234,7 @@ text = "[b]NAME:[/b]"
 fit_content = true
 
 [node name="Name" type="Label" parent="Spielerdaten"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Spielername"
@@ -280,6 +287,157 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="KochbuchKnopf" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -325.0
+offset_top = -156.0
+offset_right = -156.0
+offset_bottom = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Kochbuch"
+icon = ExtResource("17_vx24v")
+expand_icon = true
+
+[node name="Kochbuch" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("13_pknj2")
+
+[node name="Background" type="ColorRect" parent="Kochbuch"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0193283, 0.019323, 0.0418257, 0.905882)
+
+[node name="Rezepte" type="HBoxContainer" parent="Kochbuch"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 31.0
+offset_top = 27.0
+offset_right = -31.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Rezept" type="VBoxContainer" parent="Kochbuch/Rezepte"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Titel" type="Label" parent="Kochbuch/Rezepte/Rezept"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Shakshuka"
+horizontal_alignment = 1
+
+[node name="Rezept" type="Label" parent="Kochbuch/Rezepte/Rezept"]
+layout_mode = 2
+text = "Tomate
+Paprika
+Zwiebel
+Ei
+Olivenöl
+Kräuter"
+horizontal_alignment = 1
+
+[node name="Rezept2" type="VBoxContainer" parent="Kochbuch/Rezepte"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Titel" type="Label" parent="Kochbuch/Rezepte/Rezept2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Fischsuppe"
+horizontal_alignment = 1
+
+[node name="Rezept" type="Label" parent="Kochbuch/Rezepte/Rezept2"]
+layout_mode = 2
+text = "Fisch 
+(Bonus wenn gebraten)
+Karotten
+Frühlingszwiebel
+Bonus: Zitrone"
+horizontal_alignment = 1
+
+[node name="Rezept3" type="VBoxContainer" parent="Kochbuch/Rezepte"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Titel" type="Label" parent="Kochbuch/Rezepte/Rezept3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Smoothie"
+horizontal_alignment = 1
+
+[node name="Rezept" type="Label" parent="Kochbuch/Rezepte/Rezept3"]
+layout_mode = 2
+text = "Banane
+Zitrone
+"
+horizontal_alignment = 1
+
+[node name="Rezept4" type="VBoxContainer" parent="Kochbuch/Rezepte"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Titel" type="Label" parent="Kochbuch/Rezepte/Rezept4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Gebratenes Fleisch
+mit Gemüse"
+horizontal_alignment = 1
+
+[node name="Rezept" type="Label" parent="Kochbuch/Rezepte/Rezept4"]
+layout_mode = 2
+text = "Rindfleisch (gebraten)
+mindetens zwei verschiedene
+Gemüsesorten
+
+Tipp: Rindfleisch ist nicht Teil
+der Mediterranen Küche! 
+Versuche es durch eine andere 
+Sorte Fleisch zu ersetzen!"
+horizontal_alignment = 1
+
+[node name="Rezept5" type="VBoxContainer" parent="Kochbuch/Rezepte"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Titel" type="Label" parent="Kochbuch/Rezepte/Rezept5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Shakshuka"
+horizontal_alignment = 1
+
+[node name="Rezept" type="Label" parent="Kochbuch/Rezepte/Rezept5"]
+layout_mode = 2
+text = "Tomate
+Paprika
+Zwiebel
+Ei
+Olivenöl
+Kräuter 
+(Koriander oder 
+Basilikum)
+"
+horizontal_alignment = 1
 
 [node name="NewRoundOverlay" type="Control" parent="."]
 visible = false
@@ -350,7 +508,7 @@ HIER KLICKEN UM DIE NÄCHSTE RUNDE ZU BEGINNEN!
 
 "
 
-[node name="MainMenu" type="Control" parent="."]
+[node name="GerichtPopup" type="Control" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -358,16 +516,109 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("13_pknj2")
 
-[node name="Background" type="ColorRect" parent="MainMenu"]
+[node name="Background" type="ColorRect" parent="GerichtPopup"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.316838, 0.317392, 0.453014, 1)
+mouse_filter = 1
+color = Color(0.0193283, 0.019323, 0.0418257, 0.905882)
+
+[node name="Label" type="Label" parent="GerichtPopup"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -267.0
+offset_top = 35.0
+offset_right = 268.0
+offset_bottom = 98.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 45
+text = "ERFOLGREICH GEKOCHT:
+Fischsuppe"
+horizontal_alignment = 1
+
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("14_u1slc")
+
+[node name="Background" type="TextureRect" parent="MainMenu"]
+modulate = Color(0.684684, 0.440023, 0.542563, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_43m3l")
+expand_mode = 1
+
+[node name="Container" type="VBoxContainer" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 138.0
+offset_top = 43.0
+offset_right = -139.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="MainMenu/Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 44
+text = "Battle of the Chefs "
+horizontal_alignment = 1
+
+[node name="Erklärung" type="Label" parent="MainMenu/Container"]
+layout_mode = 2
+text = "Battle of the Chefs ist ein Kartenspiel in dem es darum geht, in einer TV-Kochsendung möglichst viele 
+Bewerter nacheinander zu beeindrucken, bevor einem das Deck ausgeht! 
+In der Gameshow geht es um die Ernährung der Mediteranen Küche! 
+
+Man kann Zutatenkarten für die angezeigte Punktzahl entweder direkt den Bewertern zu essen geben, 
+oder sie zu einem Gericht zusammenbauen indem man sie auf den Kochtopf zieht! 
+
+Wenn man bei einem Bewerter genug Punkte gesammelt hat, kommt der nächste. Aber vorsicht! Jeder Bewerter 
+gibt dir nur begrenzte Zeit. Verwendest du zu viele Karten ohne das Punktelimit zu erreichen, bist du leider ausgeschieden! 
+
+Neue Karten bekommt man, indem man Karten freiwillig wegwirft, oder indem man Punkte bekommt. Wenn man Karten 
+abwirft, gibt es eine 50:50 Chance dass sie für immer verschwunden sind. 
+
+Karten die man für ein Gericht verwendet, sind so oder so verbraucht und verschwinden. Aber wenn man einen Richter besiegt, 
+bekommt man eine Auswahl an neuen Karten mit denen man sein Deck aufbessern kann. 
+
+Die Rezepte könnt ihr euch im Spiel mit einem Kopf anzeigen lassen! Viel Erfolg beim Kochen!"
+horizontal_alignment = 1
+
+[node name="GameStart" type="Button" parent="MainMenu/Container"]
+layout_mode = 2
+text = "
+Neues Spiel Starten!
+
+"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_n5mqp")
+volume_db = -5.647
+autoplay = true
+script = ExtResource("15_wyd14")
 
 [connection signal="pressed" from="CookingArea/Button" to="CookingArea" method="_on_button_pressed"]
 [connection signal="child_order_changed" from="Hand" to="Hand" method="_on_child_order_changed"]
+[connection signal="pressed" from="KochbuchKnopf" to="Kochbuch" method="set_visible" binds= [true]]
+[connection signal="gui_input" from="Kochbuch" to="Kochbuch" method="_on_gui_input"]
 [connection signal="pressed" from="NewRoundOverlay/Container/Button" to="NewRoundOverlay" method="remove_overlay"]
+[connection signal="gui_input" from="GerichtPopup" to="GerichtPopup" method="_on_gui_input"]
+[connection signal="pressed" from="MainMenu/Container/GameStart" to="MainMenu" method="_on_game_start_pressed"]
+[connection signal="finished" from="Music" to="Music" method="_on_finished"]

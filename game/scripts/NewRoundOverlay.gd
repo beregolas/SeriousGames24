@@ -20,5 +20,9 @@ func remove_overlay():
 			card.mouse_filter = MOUSE_FILTER_STOP
 			cs.remove_child(card)
 			deck.deck.push_back(card)
+	# fill the deck at least to 30 with random cards
+	while len(deck.deck) < 30 - $"../Judge".judge_number:
+		deck.deck.push_back(deck.create_card())
+	deck.deck.shuffle()
 	deck.update_label()
 	visible = false

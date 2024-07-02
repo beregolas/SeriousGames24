@@ -12,6 +12,7 @@ var CARD_DATA: Array = [
 					   Card.CardData.new("Tomate", Card.FoodType.fruit, 2, 4),
 					   Card.CardData.new("Paprika", Card.FoodType.vegetable, 3, 5),
 					   Card.CardData.new("Zwiebel", Card.FoodType.vegetable, -2, 2),
+					   Card.CardData.new("Frühlingszwiebel", Card.FoodType.vegetable, -2, 2),
 					   Card.CardData.new("Olivenöl", Card.FoodType.oil, -4, null),
 					   Card.CardData.new("Olivenöl", Card.FoodType.oil, -4, null),
 					   Card.CardData.new("Olivenöl", Card.FoodType.oil, -4, null),
@@ -23,6 +24,7 @@ var CARD_DATA: Array = [
 					   Card.CardData.new("Karotte", Card.FoodType.vegetable, 3, 5),
 					   Card.CardData.new("Thunfisch", Card.FoodType.fish, -5, 5),
 					   Card.CardData.new("Hähnchenbrust", Card.FoodType.meat, -5, 6),
+					   Card.CardData.new("Rindfleisch", Card.FoodType.meat, -4, -2),
 					   Card.CardData.new("Ei", Card.FoodType.egg, -4, 2)
 					   ]
 
