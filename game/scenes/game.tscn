@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c045mmxi1aecc"]
+[gd_scene load_steps=5 format=3 uid="uid://c045mmxi1aecc"]
 
 [ext_resource type="PackedScene" uid="uid://2i6lw0cydldu" path="res://scenes/card.tscn" id="1_o4rqe"]
 [ext_resource type="Texture2D" uid="uid://danrt06ni7gib" path="res://assets/Kochtopf.png" id="2_l3snv"]
 [ext_resource type="PackedScene" uid="uid://curr4rurl6xd8" path="res://scenes/judge.tscn" id="3_qad51"]
+[ext_resource type="Script" path="res://scripts/hand.gd" id="4_41m42"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -12,43 +13,80 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Card" parent="." instance=ExtResource("1_o4rqe")]
+[node name="CookingArea" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -191.0
+offset_bottom = 219.0
+grow_horizontal = 0
+texture = ExtResource("2_l3snv")
+expand_mode = 1
+
+[node name="Trashcan" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -191.0
+offset_top = -219.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_l3snv")
+expand_mode = 1
+
+[node name="Judge" parent="." instance=ExtResource("3_qad51")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -270.5
+offset_right = 270.5
+grow_horizontal = 2
+
+[node name="Hand" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -169.0
+offset_right = 320.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+script = ExtResource("4_41m42")
+
+[node name="Card2" parent="Hand" instance=ExtResource("1_o4rqe")]
+layout_mode = 2
+
+[node name="Card3" parent="Hand" instance=ExtResource("1_o4rqe")]
+layout_mode = 2
+
+[node name="Card4" parent="Hand" instance=ExtResource("1_o4rqe")]
+layout_mode = 2
+
+[node name="CardHolder" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Card" parent="CardHolder" instance=ExtResource("1_o4rqe")]
 offset_left = 549.0
 offset_top = 400.0
 offset_right = 675.0
 offset_bottom = 576.0
 
-[node name="CookingArea" type="TextureRect" parent="."]
-offset_left = 32.0
-offset_top = 32.0
-offset_right = 223.0
-offset_bottom = 251.0
-texture = ExtResource("2_l3snv")
-expand_mode = 1
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 349.0
+offset_bottom = 123.0
+text = "add card"
 
-[node name="Trashcan" type="TextureRect" parent="."]
-offset_left = 35.0
-offset_top = 316.0
-offset_right = 226.0
-offset_bottom = 535.0
-texture = ExtResource("2_l3snv")
-expand_mode = 1
-
-[node name="Judge" parent="." instance=ExtResource("3_qad51")]
-offset_left = 613.0
-offset_top = 2.0
-offset_right = 1154.0
-offset_bottom = 202.0
-
-[node name="Hand" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -320.0
-offset_top = -169.0
-offset_right = 320.0
-grow_horizontal = 2
-grow_vertical = 0
+[connection signal="child_order_changed" from="Hand" to="Hand" method="_on_child_order_changed"]

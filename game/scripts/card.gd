@@ -51,7 +51,7 @@ func _process(delta: float):
 		position += movement
 		# add movement.x to the dangle
 		angle_speed += movement.x / 2
-		angle_speed -= rotation_degrees / 10.
+		angle_speed -= rotation_degrees / 5.
 		rotation_degrees += angle_speed * delta
 		if signf(angle_speed) == signf(rotation_degrees):
 			angle_speed *= 0.97

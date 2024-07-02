@@ -8,10 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://twc25jmgh5yk" path="res://assets/Banane_mit_Schale.jpg" id="5_cwug0"]
 
 [node name="Card" type="Control" groups=["cards"]]
+custom_minimum_size = Vector2(126, 176)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 126.0
-offset_bottom = 176.0
+offset_left = -63.0
+offset_top = -88.0
+offset_right = 63.0
+offset_bottom = 88.0
 pivot_offset = Vector2(63, 44)
 size_flags_horizontal = 4
 theme = ExtResource("1_mbnq0")
